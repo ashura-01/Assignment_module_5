@@ -20,8 +20,8 @@ class Person implements Role {
 }
 
 class Student extends Person {
-  int studentID;
-  String grade;
+  int? studentID;
+  String? grade;
   List<double> scores;
 
   Student(String name, int age, String address, this.studentID, this.grade,
@@ -43,7 +43,7 @@ class Student extends Person {
 }
 
 class Teacher extends Person {
-  int teacherID;
+  int? teacherID;
   List<String> coursesTaught;
 
   Teacher(
@@ -57,8 +57,8 @@ class Teacher extends Person {
 
   void displayCoursesTaught() {
     print("Courses Taught:");
-    for (var course in coursesTaught) {
-      print("- $course");
+    for (var element in coursesTaught) {
+      print("- $element");
     }
   }
 }
@@ -66,9 +66,9 @@ class Teacher extends Person {
 class StudentManagementSystem {
   void main() {
     Student student =
-        Student("John Doe", 20, "123 Main St", 123, "A", [90, 85, 82]);
+        Student("John Doe", 20, "123 Main St", null, null, [90, 85, 82]);
     Teacher teacher = Teacher(
-        "Mrs. Smith", 35, "456 Oak St", 1234, ["Math", "English", "Bangla"]);
+        "Mrs. Smith", 35, "456 Oak St", null, ["Math", "English", "Bangla"]);
 
     print("\nStudent Information:");
     student.displayRole();
